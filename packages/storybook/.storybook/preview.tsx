@@ -26,7 +26,7 @@ const decorators: Preview["decorators"] = [
       // @ts-ignore
       locale && new Intl.Locale(locale)?.textInfo?.direction === "rtl" ? "rtl" : undefined;
 
-    console.log('Story ===>', story, locale)
+    // console.log('Story ===>', story, locale)
     return {
       components: { story },
       setup() {

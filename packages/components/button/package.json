@@ -22,8 +22,11 @@
   "scripts": {
     "build": "tsup src --dts"
   },
-  "peerDependencies": {},
-  "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "@nextui-vue/shared-utils": "workspace:^",
+    "@nextui-vue/system": "workspace:^",
+    "@nextui-vue/theme": "workspace:^",
+    "react": "^18.2.0"
+  },
   "clean-package": ""
 }

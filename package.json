@@ -31,6 +31,7 @@
     "@changesets/cli": "^2.27.1",
     "@nextui-org/react": "^2.2.10",
     "@storybook/vue3": "^7.6.17",
+    "@types/react": "^18.2.65",
     "react": "^18.2.0",
     "tailwind-variants": "^0.2.0",
     "tsup": "^8.0.2",

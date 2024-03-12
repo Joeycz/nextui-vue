@@ -1,0 +1,49 @@
+{
+  "name": "@nextui-vue/shared-utils",
+  "version": "2.0.4",
+  "description": "A set of NextUI utilities",
+  "keywords": [
+    "system"
+  ],
+  "author": "Joeycz <muxiesan1989@gmail.com>",
+  "homepage": "",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Joeycz/nextui-vue.git",
+    "directory": "packages/core/system"
+  },
+  "bugs": {
+    "url": "https://github.com/Joeycz/nextui-vue/issues"
+  },
+  "scripts": {
+    "build": "tsup src --dts",
+    "dev": "pnpm build:fast --watch",
+    "clean": "rimraf dist .turbo",
+    "typecheck": "tsc --noEmit",
+    "build:fast": "tsup src",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
+  "peerDependencies": {},
+  "devDependencies": {
+    "clean-package": "2.2.0"
+  },
+  "clean-package": "../../../clean-package.config.json",
+  "tsup": {
+    "clean": true,
+    "target": "es2019",
+    "format": [
+      "cjs",
+      "esm"
+    ]
+  }
+}

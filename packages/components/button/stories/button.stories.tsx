@@ -1,6 +1,6 @@
-import Vue from "vue";
-import React from "react";
+import Vue, { ref } from "vue";
 import type { Meta } from "@storybook/vue3";
+import {button} from "@nextui-vue/theme";
 
 import { Button, ButtonProps } from "../src";
 
@@ -61,20 +61,34 @@ export default {
   },
 } as Meta<typeof Button>;
 
-const defaultProps = {
-  children: "Button",
-  spinnerPlacement: "start",
-};
+const defaultProps = {};
 
 const StateTemplate = (args: ButtonProps) => {
+  const isOpen = ref(false);
+
+  const handlePress = () => {
+    // eslint-disable-next-line no-console
+    console.log("Pressed");
+    isOpen.value = !isOpen.value;
+  };
+
   return (
-    <Button>open</Button>
+    <Button {...args} aria-label="Open" aria-pressed={isOpen} onPress={handlePress}>
+      {isOpen ? "Close" : "Open"}
+    </Button>
   );
 };
 
 export const Default = {
+  args: {
+    ...defaultProps,
+  },
+};
+
+export const WithState = {
   render: StateTemplate,
   args: {
+    as: 'li',
     ...defaultProps,
   },
 };
