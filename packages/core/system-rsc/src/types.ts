@@ -72,7 +72,7 @@ export type HTMLNextUIProps<T extends As = "div", OmitKeys extends keyof any = n
   PropsOf<T>,
   "ref" | "color" | "slot" | "size" | "defaultChecked" | "defaultValue" | OmitKeys
 > & {
-  as?: As;
+  as?: As | null;
 };
 
 export type PropGetter<P = Record<string, unknown>, R = DOMAttributes> = (

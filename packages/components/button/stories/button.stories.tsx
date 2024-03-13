@@ -61,7 +61,10 @@ export default {
   },
 } as Meta<typeof Button>;
 
-const defaultProps = {};
+const defaultProps = {
+  spinnerPlacement: "start",
+  ...button.defaultVariants,
+};
 
 const StateTemplate = (args: ButtonProps) => {
   const isOpen = ref(false);
@@ -73,13 +76,18 @@ const StateTemplate = (args: ButtonProps) => {
   };
 
   return (
-    <Button {...args} aria-label="Open" aria-pressed={isOpen} onPress={handlePress}>
-      {isOpen ? "Close" : "Open"}
+    <Button {...args} aria-label="Open" aria-pressed={isOpen.value} onClick={handlePress}>
+      {isOpen.value ? "Close" : "Open"}
     </Button>
   );
 };
 
 export const Default = {
+  render: (args: ButtonProps) => (
+    <Button {...args}>
+      Button
+    </Button>
+  ),
   args: {
     ...defaultProps,
   },
@@ -88,7 +96,6 @@ export const Default = {
 export const WithState = {
   render: StateTemplate,
   args: {
-    as: 'li',
     ...defaultProps,
   },
 };
