@@ -64,6 +64,7 @@ export default {
 const defaultProps = {
   spinnerPlacement: "start",
   ...button.defaultVariants,
+  color: 'primary'
 };
 
 const StateTemplate = (args: ButtonProps) => {

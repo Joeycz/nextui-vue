@@ -11,7 +11,7 @@
     "strict": true,
     "isolatedModules": true,
     "noFallthroughCasesInSwitch": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "jsxImportSource": "vue",
     "esModuleInterop": true,
     "resolveJsonModule": true,

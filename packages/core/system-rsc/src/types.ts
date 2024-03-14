@@ -68,11 +68,8 @@ export type PropsOf<T extends As> = React.ComponentPropsWithoutRef<T> & {
 
 export type Merge<M, N> = N extends Record<string, unknown> ? M : Omit<M, keyof N> & N;
 
-export type HTMLNextUIProps<T extends As = "div", OmitKeys extends keyof any = never> = Omit<
-  PropsOf<T>,
-  "ref" | "color" | "slot" | "size" | "defaultChecked" | "defaultValue" | OmitKeys
-> & {
-  as?: As | null;
+export type HTMLNextUIProps<T extends As = "div", OmitKeys extends keyof any = never> = {
+  as?: string;
 };
 
 export type PropGetter<P = Record<string, unknown>, R = DOMAttributes> = (
